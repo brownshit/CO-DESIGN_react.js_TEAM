@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meme maker</title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+    <div class="color-options">
+        <div class="color-option"
+            style="background-color: #f6e58d;" 
+            data-color="#f6e58d"></div>
+        <div class="color-option"
+            style="background-color: #ffbe76;" 
+            data-color="#ffbe76"></div>
+        <div class="color-option"
+            style="background-color: #ff7979;" 
+            data-color="#ff7979"></div>
+        <div class="color-option"
+            style="background-color: #badc58;" 
+            data-color="#badc58"></div>
+        <div class="color-option"
+            style="background-color: #dff9fb;" 
+            data-color="#dff9fb"></div>
+        <div class="color-option"
+            style="background-color: #f9ca24;" 
+            data-color="#f9ca24"></div>
+        <div class="color-option"
+            style="background-color: #f0932b;" 
+            data-color="#f0932b"></div>
+        <div class="color-option" 
+            style="background-color: #eb4d4b;" 
+            data-color="#eb4d4b"></div>
+        <div class="color-option" 
+            style="background-color: #6ab04c;" 
+            data-color="#6ab04c"></div>
+        <div class="color-option" 
+            style="background-color: #c7ecee;" 
+            data-color="#c7ecee"></div>
+        <div class="color-option" 
+            style="background-color: #7ed6df;" 
+            data-color="#7ed6df"></div>
+        <div class="color-option" 
+            style="background-color: #e056fd;" 
+            data-color="#e056fd"></div>
+        <div class="color-option" 
+            style="background-color: #686de0;" 
+            data-color="#686de0"></div>
+        <div class="color-option" 
+            style="background-color: #30336b;" 
+            data-color="#30336b"></div>
+        <div class="color-option" 
+            style="background-color: #95afc0;" 
+            data-color="#95afc0"></div>
+        <div class="color-option" 
+            style="background-color: #4834d4;" 
+            data-color="#4834d4"></div>
+        <div class="color-option" 
+            style="background-color: #22a6b3;" 
+            data-color="#22a6b3"></div>
+        <div class="color-option" 
+            style="background-color: #130f40;" 
+            data-color="#130f40"></div>
+        <div class="color-option" 
+            style="background-color: #535c68;" 
+            data-color="#535c68"></div>
+        <div class="color-option" 
+            style="background-color: #2f3640;" 
+            data-color="#2f3640"></div>
+    </div>
+    <canvas></canvas>
+    <div class="btns">
+        <span>Pencil Width</span>
+        <input id="line-width" type="range" min="1" max="10"
+        value="5" step="0.1"/>
+        <input type="color" id="color"/>
+        
+        <button id="mode-btn">Fill</button>
+        <button id="destroy-btn">Destroy</button>
+        <button id="eraser-btn">Erase</button>
+        <label for="file">
+            AddPhoto
+            <input type="file" accept="image/*" id="file"/>
+        </label>
+        <input type="text" placeholder="Add text here...:)" id="text"/>
+        <button id="save">Save image</button>
+    </div>
+    <script src="app.js"></script>
+    
+</body>
+</html>

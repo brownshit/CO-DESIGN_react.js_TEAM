@@ -1,0 +1,206 @@
+//we'll make project by canvas api
+//기본 html만들기 위해서 ! ctrl + space를 이용할 수 있다!
+
+//live server다운로드 받아서 우측하단에서 실행시키면 된다!!
+//js이름은 무조건 index.js로 지어야 한다.
+//canvas api 는 js로 그래픽을 그려주게 할 수 있다.
+//webgl api로는 2d나 3d그래픽을 그려줄 수 있다.
+
+const canvas = document.querySelector("canvas");//html에서 가져온다
+
+//brush 캔버스에 그림 그릴때 사용할 변수.
+//canvas 는 그릴수 있는 붓을 주는 강력한 기능을 가지고 있다.
+const ctx = canvas.getContext("2d");//we have two choice, 2d, webgl
+
+//선들을 수정할 border를 설정해준 것, 그림은 canvas안에서만
+canvas.width = 800;
+canvas.height = 800;
+
+//canvas의 좌표시스템 좌측 상단끝이 0,0 // x,y축으로 구성되어 있다.
+
+ctx.rect(50, 50, 100, 100);
+ctx.rect(150, 150, 100, 100);
+ctx.rect(250, 250, 100, 100);
+ctx.fill();//중간에 fill해주면 그 뒤에 오는 rect들은 그려지지 않게된다.
+
+//canvas로 그린 그림들은 원한다면 경로로 나눌 수 있다는 것!
+ctx.beginPath(); //create a new path...! 독립적인 애다.
+//이제부터는 새로운 경로에 있는 것이다!
+ctx.rect(350, 350, 100, 100);
+//ctx.stroke();
+ctx.fillStyle = "red";
+//5초뒤에 ctx.fill이 실행된다.
+setTimeout(()=>{ctx.fill();}, 5000) //2nd 인자는 ms를 의미한다.
+
+================================================================================
+
+//we'll make project by canvas api
+//기본 html만들기 위해서 ! ctrl + space를 이용할 수 있다!
+
+//live server다운로드 받아서 우측하단에서 실행시키면 된다!!
+//js이름은 무조건 index.js로 지어야 한다.
+//canvas api 는 js로 그래픽을 그려주게 할 수 있다.
+//webgl api로는 2d나 3d그래픽을 그려줄 수 있다.
+
+const canvas = document.querySelector("canvas");//html에서 가져온다
+
+//brush 캔버스에 그림 그릴때 사용할 변수.
+//canvas 는 그릴수 있는 붓을 주는 강력한 기능을 가지고 있다.
+const ctx = canvas.getContext("2d");//we have two choice, 2d, webgl
+
+//선들을 수정할 border를 설정해준 것, 그림은 canvas안에서만
+canvas.width = 800;
+canvas.height = 800;
+
+//canvas의 좌표시스템 좌측 상단끝이 0,0 // x,y축으로 구성되어 있다.
+
+ctx.moveTo(50,50);
+ctx.lineTo(150,50);
+//ctx.moveTo(50,50);
+ctx.moveTo(150,50);
+ctx.lineTo(150,150);
+ctx.moveTo(50,50);
+ctx.lineTo(50,150);
+ctx.moveTo(50,150);
+ctx.lineTo(150,150);
+// == ctx.strokerect(); 위의 길고 긴 여정은 다음과 같다.
+ctx.stroke();
+
+ctx.fillRect(200, 200, 50, 200);
+ctx.fillRect(400, 200, 50, 200);
+ctx.lineWidth = 2;
+ctx.strokeRect(300, 300, 50, 100);//only show the borders
+
+ctx.fillRect(200, 200, 200, 20);
+ctx.moveTo(200, 200);
+ctx.lineTo(325, 100);
+ctx.moveTo(450, 200);
+ctx.lineTo(325, 100);
+ctx.stroke()
+================================================================================
+
+//we'll make project by canvas api
+//기본 html만들기 위해서 ! ctrl + space를 이용할 수 있다!
+
+//live server다운로드 받아서 우측하단에서 실행시키면 된다!!
+//js이름은 무조건 index.js로 지어야 한다.
+//canvas api 는 js로 그래픽을 그려주게 할 수 있다.
+//webgl api로는 2d나 3d그래픽을 그려줄 수 있다.
+
+const canvas = document.querySelector("canvas");//html에서 가져온다
+
+//brush 캔버스에 그림 그릴때 사용할 변수.
+//canvas 는 그릴수 있는 붓을 주는 강력한 기능을 가지고 있다.
+const ctx = canvas.getContext("2d");//we have two choice, 2d, webgl
+
+//선들을 수정할 border를 설정해준 것, 그림은 canvas안에서만
+canvas.width = 800;
+canvas.height = 800;
+
+//canvas의 좌표시스템 좌측 상단끝이 0,0 // x,y축으로 구성되어 있다.
+
+ctx.fillRect(210, 200, 15, 100);
+ctx.fillRect(350, 200, 15, 100);
+ctx.fillRect(260, 200, 60, 200);
+
+ctx.arc(250, 100, 30, 0, 2*Math.PI);     //네번째 인자는 startangle, 다섯번째는 ending angle
+ctx.fill();
+
+ctx.beginPath();//위에 덮어서 새로쓰기 __이거 새로운 내용으로 분기해주는거네!! 기준으로 section이 나뉘게 되는 것이다!
+ctx.fillStyle = "white";
+ctx.arc(260, 90, 5, 0, 2*Math.PI);
+ctx.arc(240, 90, 5, 0, 2*Math.PI);
+ctx.fill();
+
+//항상 색을 바꿔주려고 할때, 새로운path가 필요한지 아닌지에 대해서 생각을 해줘야 한다.
+
+================================================================================
+
+//we'll make project by canvas api
+//기본 html만들기 위해서 ! ctrl + space를 이용할 수 있다!
+
+//live server다운로드 받아서 우측하단에서 실행시키면 된다!!
+//js이름은 무조건 index.js로 지어야 한다.
+//canvas api 는 js로 그래픽을 그려주게 할 수 있다.
+//webgl api로는 2d나 3d그래픽을 그려줄 수 있다.
+
+const canvas = document.querySelector("canvas");//html에서 가져온다
+
+//brush 캔버스에 그림 그릴때 사용할 변수.
+//canvas 는 그릴수 있는 붓을 주는 강력한 기능을 가지고 있다.
+const ctx = canvas.getContext("2d");//we have two choice, 2d, webgl
+
+//선들을 수정할 border를 설정해준 것, 그림은 canvas안에서만
+canvas.width = 800;
+canvas.height = 800;
+
+//canvas의 좌표시스템 좌측 상단끝이 0,0 // x,y축으로 구성되어 있다.
+
+ctx.lineWidth = 2;
+
+const colors = [
+    "#1abc9c",
+    "#c0392b",
+    "#7f8c8d",
+    "#2c3e50",
+    "#8e44ad",
+    "#3498db",
+    "#16a085",
+    "#f1c40f",
+    "#badc58"
+]
+
+function onClick(event){
+    //console.log(event)
+    ctx.beginPath();
+    ctx.moveTo(400,400);// 0,0의 초기점으로 돌아간다.
+
+    const color = colors[Math.floor(Math.random()*colors.length)]//무작위로 색을 가져온다.
+    ctx.strokeStyle = color;
+    ctx.lineTo(event.offsetX,event.offsetY);
+    //we essentially stroke the lines!!
+    ctx.stroke();
+}
+//canvas.addEventListener("click", onClick)
+canvas.addEventListener("mousemove", onClick)
+
+================================================================================
+
+이미지만 받게 할 수 있다.
+<input type="file" accept="image/*"/>
+
+================================================================================
+
+<label for="file">
+            AddPhoto
+            <input type="file" accept="image/*" id="file"/>
+        </label>
+
+여기서 input을 lable로 감싸주기 위해 lable의 for를 id와 같은 file로 설정해 주었다.
+================================================================================
+button,
+label {
+    all:unset;
+    padding: 10px 0px;
+    text-align: center;
+    background-color: royalblue;
+    color: beige;
+    font-weight: 500;
+    cursor: pointer;
+    border-radius: 10px;
+    transition: opacity linear .3s;
+}
+label을 button처럼 꾸며주기 위해, button과 똑같은 css를 적용시켜주었다.
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
+================================================================================
